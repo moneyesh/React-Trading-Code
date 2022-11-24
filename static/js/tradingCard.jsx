@@ -1,6 +1,6 @@
 'use strict';
 
-const tradingCardData = [
+const tradingCards = [
   {
     name: "Balloonicorn",
     skill: "video games",
@@ -74,13 +74,15 @@ const tradingCardData = [
 //--name, skill and imgurl
 //--via componnent OR line 19 where it says const. 
 
-const tradingCardData = [
-  {
-    name: 'Balloonicorn',
-    skill: 'video games',
-    imgUrl: '/static/img/balloonicorn.jpg',
-  },
-];
+
+// old trading card data variable:
+// const tradingCardData = [
+//   {
+//     name: 'Balloonicorn',
+//     skill: 'video games',
+//     imgUrl: '/static/img/balloonicorn.jpg',
+//   },
+// ];
 
 function TradingCard(props) {
   return (
@@ -98,34 +100,58 @@ of different trading cards.  */}
   );
 }
 
+function TradingCardContainer() {
+  const allTradingCards= [];
+
+  for (const currentCard of tradingCards) {
+      allTradingCards.push(
+      <TradingCard
+      name={currentCard.name}
+      skill={currentCard.skill}
+      imgUrl={currentCard.imgUrl}
+      />
+    );
+  }
+
+  return (
+    <React.Fragment>
+      {allTradingCards}
+    </React.Fragment>
+  );
+
+}
+
+ReactDOM.render(<TradingCardContainer />, document.querySelector("#tradingcards"),)
+
+//Below is the original way we rendered each card (instane) to the website
+// ReactDOM.render(
+//   <TradingCard name="Balloonicorn" skill="video games" imgUrl="/static/img/balloonicorn.jpg" />,
+//   document.querySelector('#balloonicorn'),
+// );
+
+// ReactDOM.render(
+//   <TradingCard name="Float" skill="baking pretzels" imgUrl="/static/img/float.jpg" />,
+//   document.querySelector('#float'),
+// );
+
+// ReactDOM.render(
+//   <TradingCard name="Llambda" skill="knitting scarves" imgUrl="/static/img/llambda.jpg" />,
+//   document.querySelector('#llambda'),
+// );
+
+
+// ReactDOM.render(
+//   <TradingCard name="polymorphism" skill="juggling" imgUrl="/static/img/polymorphism.jpeg" />,
+//   document.querySelector('#polymorphism'),
+// );
 
 // each ReactDOM are similar to instances
 //Then, an instance of the TradingCard component is created, providing 
 // different props for each trading card. 
-ReactDOM.render(
-  <TradingCard name="Balloonicorn" skill="video games" imgUrl="/static/img/balloonicorn.jpg" />,
-  document.querySelector('#balloonicorn'),
-);
 
-ReactDOM.render(
-  <TradingCard name="Float" skill="baking pretzels" imgUrl="/static/img/float.jpg" />,
-  document.querySelector('#float'),
-);
-
-ReactDOM.render(
-  <TradingCard name="Llambda" skill="knitting scarves" imgUrl="/static/img/llambda.jpg" />,
-  document.querySelector('#llambda'),
-);
-
-
-ReactDOM.render(
-  <TradingCard name="polymorphism" skill="juggling" imgUrl="/static/img/polymorphism.jpeg" />,
-  document.querySelector('#polymorphism'),
-);
-
-ReactDOM.render(
-<TradingCard name="seedpy" skill="gardening" imgUrl="/static/img/seedpy.jpeg" />, document.querySelector("#seedpy"),
-);
+// ReactDOM.render(
+// <TradingCard name="seedpy" skill="gardening" imgUrl="/static/img/seedpy.jpeg" />, document.querySelector("#seedpy"),
+// );
 
 
 //  think about how you would structure your trading card data in either Python or JavaScript.
@@ -133,3 +159,8 @@ ReactDOM.render(
 
 //DICTIONARYYY-iesha
 
+
+// This is the for loop to test in the console to make sure the dictionary works
+// for (const cards of tradingCards) {
+//   console.log(cards.name, cards.skill)
+//   }

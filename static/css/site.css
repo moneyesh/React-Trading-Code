@@ -17,7 +17,25 @@ div.card {
 
 body {
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  background-color: cornsilk;
 }
 img {
   height: 7em;
 }
+
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
+#author {
+  text-align: center;
+}
+
+.home {
+  text-align: center;
+}
+

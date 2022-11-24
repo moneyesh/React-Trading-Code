@@ -22,13 +22,17 @@ Things to note:
     <React.Fragment>
 
   {/* A welcome message to the user */}
-  <h3>welcome user!!!!</h3>
+  <h2>Here you will find cool trading cards.</h2>
 
   {/* A link to the /cards page */}
-  <a href="/cards">Click here to view trading cards!</a>
+  
   
   {/* A nice, large image of Balloonicorn (the image is located at /static/img/balloonicorn.jpg) */}
+  <div class="home">
   <img src="/static/img/balloonicorn.jpg" />
+  </div>
+
+  <p class="home"><a href="/cards">Click here to view trading cards!</a></p>
 
   </React.Fragment>
 
